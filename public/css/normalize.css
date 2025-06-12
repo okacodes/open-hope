@@ -163,7 +163,7 @@ optgroup,
 select,
 textarea {
   font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
+  /* font-size: 100%; */ /* 1 */ /* commented out because it's affecting the style of my buttons */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
 }
