@@ -124,6 +124,24 @@ body {
           box-shadow: inset 0 0 0 1px #7ba3a1;
           background-color: rgb(243, 243, 243);
         }
+  .hero-secondary-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid blue;
+    width: 98%;
+    margin-top: 1%;
+    gap: 1%;
+  }
+    .hero-secondary {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* width: 98%; */
+      width: 50%;
+      border: 2px solid blue;
+    }
 
 
 /******************************************
