@@ -1,12 +1,17 @@
 const express = require('express')
 const app = express()
-// const connectDB = require('./config/database')
+const mongoose = require('mongoose')
+const connectDB = require('./config/database')
+const passport = require('passport')
+const session = require('express-session')
 const homeRoutes = require('./routes/home')
 
 require('dotenv').config({path: './config/.env'})
 
-// line 3
-// connectDB()
+// Passport config
+require('./config/passport')(passport)
+
+connectDB()
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))

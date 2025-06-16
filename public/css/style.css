@@ -141,7 +141,28 @@ body {
       /* width: 98%; */
       width: 50%;
       border: 2px solid blue;
+      background-color: #b8e4e2;
     }
+      .hero-secondary > h2 {
+        padding: 0;
+        margin: 3rem;
+        font-size: 2rem;
+      }
+      .hero-secondary > span {
+        margin: 0 3rem;
+        text-align: center;
+      }
+      .hero-cat-right-container {
+        display: flex;
+        justify-content: flex-end;
+
+
+      }
+        .hero-cat-right {
+          width: 50%;
+          height: auto;
+        }
+
 
 
 /******************************************
