@@ -1,10 +1,10 @@
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 
-const UserSchame =- new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
   userName: { type: String, unique: true },
   email: { type: String, unique: true },
-  password: String
+  password: { type: String, required: true }
 })
 
 
@@ -22,3 +22,13 @@ UserSchema.pre('save', function save(next) {
     })
   })
 })
+
+// Validate user's password
+
+UserScehma.models.comparePassword = function comparePassword(candidatePassword, cb) {
+  bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
+    cb(err, isMatch)
+  })
+}
+
+modules.exports = mongoose.model('User', UserSchema)
