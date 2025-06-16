@@ -6,8 +6,8 @@ const passport = require('passport')
 const logger = require('morgan')
 const session = require('express-session')
 const flash = require('express-flash')
-const MongoStore = require('connect-mongo')(session)
-const homeRoutes = require('./routes/home')
+const MongoStore = require('connect-mongo')
+const mainRoutes = require('./routes/main')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -26,7 +26,9 @@ app.use(
     secret: `${process.env.SESSION_SECRET}`,
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection })
+    store: MongoStore.create({
+      client: mongoose.connection.getClient()
+    })
   })
 )
 
@@ -36,7 +38,7 @@ app.use(passport.session())
 
 app.use(flash())
 
-app.use('/', homeRoutes)
+app.use('/', mainRoutes)
  
 app.listen((process.env.PORT || 8484), ()=>{
   console.log('Server is running, you better catch it!')
