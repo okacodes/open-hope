@@ -66,7 +66,8 @@ const User = require('../models/User')
   
     if (validationErrors.length) {
       req.flash('errors', validationErrors)
-      return res.redirect('../signup')
+      console.log('wtf...')
+      return res.redirect('../')
     }
     req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
   
@@ -79,13 +80,13 @@ const User = require('../models/User')
     User.findOne({$or: [
       {email: req.body.email},
       {userName: req.body.userName}
-    ]}, (err, existingUser) => {
+    ]}).then((err, existingUser) => {
       if (err) { return next(err) }
       if (existingUser) {
         req.flash('errors', { msg: 'Account with that email address or username already exists.' })
-        return res.redirect('../signup')
+        return res.redirect('../')
       }
-      user.save((err) => {
+      user.save().then((err) => {
         if (err) { return next(err) }
         req.logIn(user, (err) => {
           if (err) {

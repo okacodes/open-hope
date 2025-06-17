@@ -19,6 +19,13 @@
 <body>
   <div class="signup-modal-container hidden">
     <form class="signup-form" action="/signup" method="POST">
+    <% if (locals.messages.errors) { %>
+      <% messages.errors.forEach( el => { %>
+        <div class="alert alert-danger">
+          <%= el.msg %>
+        </div>
+      <% }) %>    
+    <% } %>
       <div class="register-field">
         <label for="username">Username:</label>
         <input type="text" name="username" placeholder="Username">

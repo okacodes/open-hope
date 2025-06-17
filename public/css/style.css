@@ -21,6 +21,7 @@ body {
 }
   .signup-modal-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -33,7 +34,7 @@ body {
     .signup-form {
       display: flex;
       flex-direction: column;
-      padding: 15rem;
+      padding: 25vh;
       background-color: white;
       border-radius: 5px;
       gap: 1rem;
