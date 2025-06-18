@@ -19,30 +19,95 @@ body {
   font-size: 16px;
   font-family: 'Archivo', sans-serif;
 }
-  .signup-modal-container {
+  .signup-modal-container.hidden {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    border: 2px solid blue;
     background-color: rgba(0,0,0,0.4);
     position: fixed;
     z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 5s ease-in-out;
+
   }
-    .signup-form {
+    .signup-modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    z-index: 1;
+    opacity: 1;
+    pointer-events: auto; /* Restores interactivity */
+    transition: opacity 0.5s ease-in-out;
+
+  }
+    .signup-form-container {
       display: flex;
       flex-direction: column;
-      padding: 25vh;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 15px;
+      width: 50vh;
+      height: 50vh;
       background-color: white;
-      border-radius: 5px;
-      gap: 1rem;
+      box-shadow: 0 0 10px 1px rgb(0 0 0 / 0.8);
     }
-     .register-field {
-      display: flex;
-      flex-direction: column;
-     }
+      .close-btn-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        margin: 1rem 2rem 0 0;
+        color: black;
+      }
+        .close-btn {
+          color: black;
+        }
+      .register-head {
+        position: absolute;
+        font-size: 2rem;
+        bottom: 80%;
+        width: 20;
+      }
+      .signup-form {
+        display: flex;
+        flex-direction: column;
+        /* padding: 10vh; */
+        /* background-color: white; */
+        position: fixed;
+        gap: 1rem;
+      }
+      .register-field {
+        display: flex;
+        flex-direction: column;
+      }
+      .register-btn-modal {
+        background-color: transparent;
+        text-decoration: none;
+        color: black;
+        border: none;
+        box-shadow: inset 0 0 0 1px rgb(219, 219, 219);
+        border-radius: 5px;
+        /* padding: 0.5rem 1rem; */
+        transition: 0.3s ease-in-out;
+      }
+      .register-btn-modal:hover {
+          color: #358b86;
+          box-shadow: inset 0 0 0 1px #7ba3a1;
+          border-radius: 5px;
+          /* padding: 0.5rem 1rem; */
+          transition: 0.3s ease-in-out;
+      }
 
 
 .header-container {
@@ -82,7 +147,7 @@ body {
       gap: 1rem;
 
     }
-      .menu-login > .register-btn {
+      .register-btn {
         background-color: transparent;
         text-decoration: none;;
         color: black;
@@ -92,7 +157,7 @@ body {
         padding: 0.5rem 1rem;
         transition: 0.3s ease-in-out;
       }
-        .menu-login > .register-btn:hover {
+        .register-btn:hover {
           color: #358b86;
           box-shadow: inset 0 0 0 1px #7ba3a1;
           border-radius: 5px;

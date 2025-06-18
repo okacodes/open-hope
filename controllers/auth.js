@@ -65,8 +65,8 @@ const User = require('../models/User')
     if (req.body.password !== req.body.confirmPassword) validationErrors.push({ msg: 'Passwords do not match' })
   
     if (validationErrors.length) {
+      console.log('bruh3')
       req.flash('errors', validationErrors)
-      console.log('wtf...')
       return res.redirect('../')
     }
     req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
@@ -80,20 +80,30 @@ const User = require('../models/User')
     User.findOne({$or: [
       {email: req.body.email},
       {userName: req.body.userName}
-    ]}).then((err, existingUser) => {
-      if (err) { return next(err) }
+    ]}).then((existingUser) => {
+      // if (err) {
+      //   console.log('bruh2') 
+      //   return next(err) 
+      // }
       if (existingUser) {
         req.flash('errors', { msg: 'Account with that email address or username already exists.' })
+        console.log('bruh...')
         return res.redirect('../')
       }
-      user.save().then((err) => {
+      user.save()
+      .then((err) => {
         if (err) { return next(err) }
         req.logIn(user, (err) => {
           if (err) {
+            console.log('bruh4')
             return next(err)
           }
           res.redirect('/dashboard')
         })
       })
+    })
+    .catch((err) => {
+      console.log('bruh2') 
+      return next(err)
     })
   }

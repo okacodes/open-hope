@@ -18,32 +18,41 @@
 </head>
 <body>
   <div class="signup-modal-container hidden">
-    <form class="signup-form" action="/signup" method="POST">
-    <% if (locals.messages.errors) { %>
-      <% messages.errors.forEach( el => { %>
-        <div class="alert alert-danger">
-          <%= el.msg %>
+    
+    <div class="signup-form-container">
+      <div class="close-btn-container">
+        <a href="#"><i class="fa-solid fa-x close-btn"></i></a>
+      </div>
+      <div class="register-head">
+        <span>Register</span>
+      </div>
+      <form class="signup-form" action="/signup" method="POST">
+      <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+          <div class="alert alert-danger">
+            <%= el.msg %>
+          </div>
+        <% }) %>
+      <% } %>
+        <div class="register-field">
+          <label for="userName">Username:</label>
+          <input type="text" name="userName" placeholder="Username">
         </div>
-      <% }) %>    
-    <% } %>
-      <div class="register-field">
-        <label for="username">Username:</label>
-        <input type="text" name="username" placeholder="Username">
-      </div>
-      <div class="register-field">
-        <label for="email">Email:</label>
-        <input type="email" name="email" placeholder="Email">
-      </div>
-      <div class="register-field">
-        <label for="password">Password:</label>
-        <input type="password" name="password" placeholder="Password">
-      </div>
-      <div class="register-field">
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" name="confirmPassword" placeholder="Confirm Password">
-      </div>
-      <input type="submit">
-    </form>
+        <div class="register-field">
+          <label for="email">Email:</label>
+          <input type="email" name="email" placeholder="Email">
+        </div>
+        <div class="register-field">
+          <label for="password">Password:</label>
+          <input type="password" name="password" placeholder="Password">
+        </div>
+        <div class="register-field">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" name="confirmPassword" placeholder="Confirm Password">
+        </div>
+        <input class="register-btn-modal" type="submit" value="Sign up">
+      </form>
+    </div>
   </div>
   <div class="header-container">
     <header class="header">
@@ -54,12 +63,9 @@
         <a href="#">Find a shelter</a>
       </div>
       <div class="menu-login">
-        <a class="register-btn" href="#">Sign Up</a>
+        <a class="register-btn" href="#">Sign up</a>
         <a class="login-btn" href="#">Log in</a>
       </div>
-      <!-- <div class="signup-modal hidden">
-        
-      </div> -->
     </header>
   </div>
   <section class="hero-container">
@@ -95,5 +101,7 @@
   </section>
   <!-- TODO: Add 3 cards after big hero section, evenly spaced. This will contain text and maybe some images.
   Another option is to make two cards, also evenly spaced. Expand on hover. -->
+
+  <script src="js/main.js"></script>
 </body>
 </html>
