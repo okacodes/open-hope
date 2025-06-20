@@ -90,6 +90,8 @@ const User = require('../models/User')
         console.log('bruh...')
         return res.redirect('../')
       }
+      // NOTE TO SELF:
+      // Use AJAX to handle the form. Redirecting/re-rendering/refreshing the page can be avoided that way.
       user.save()
       .then((err) => {
         if (err) { return next(err) }
