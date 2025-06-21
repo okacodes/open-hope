@@ -31,22 +31,22 @@
         <%= messages.errors[0].msg %>
       <% } %>
       </div>
-      <form class="signup-form" action="/signup" method="POST">
+      <form class="signup-form">
         <div class="register-field">
           <label for="userName">Username:</label>
-          <input type="text" name="userName" placeholder="Username">
+          <input class="userName" type="text" name="userName" placeholder="Username">
         </div>
         <div class="register-field">
           <label for="email">Email:</label>
-          <input type="email" name="email" placeholder="Email">
+          <input class="email" type="email" name="email" placeholder="Email">
         </div>
         <div class="register-field">
           <label for="password">Password:</label>
-          <input type="password" name="password" placeholder="Password">
+          <input class="password" type="password" name="password" placeholder="Password">
         </div>
         <div class="register-field">
           <label for="confirmPassword">Confirm Password:</label>
-          <input type="password" name="confirmPassword" placeholder="Confirm Password">
+          <input class="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password">
         </div>
         <input class="register-btn-modal" type="submit" value="Sign up">
       </form>
