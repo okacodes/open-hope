@@ -56,7 +56,7 @@ body {
       align-items: center;
       position: relative;
       border-radius: 15px;
-      width: 50vh;
+      width: 25rem;
       height: auto;
       background-color: white;
       box-shadow: 0 0 10px 1px rgb(0 0 0 / 0.8);
@@ -79,10 +79,20 @@ body {
         bottom: 80%;
         width: 20;
       }
+      .alert-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 5rem;
+        width: 15rem;
+        color: red;
+      }
       .signup-form {
         display: flex;
         flex-direction: column;
-        margin: 2rem 0 4rem 0;
+        margin: 0rem 0 4rem 0;
         /* padding: 10vh; */
         /* background-color: white; */
         /* position: fixed; */

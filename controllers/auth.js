@@ -60,6 +60,7 @@ const User = require('../models/User')
   
   exports.postSignup = (req, res, next) => {
     const validationErrors = []
+    if (!validator.contains((req.body.userName || req.body.email || req.body.password), ' ')) validationErrors.push({ msg: 'No spaces allowed' })
     if (!validator.isEmail(req.body.email)) validationErrors.push({ msg: 'Please enter a valid email address.' })
     if (!validator.isLength(req.body.password, { min: 8 })) validationErrors.push({ msg: 'Password must be at least 8 characters long' })
     if (req.body.password !== req.body.confirmPassword) validationErrors.push({ msg: 'Passwords do not match' })
@@ -67,7 +68,6 @@ const User = require('../models/User')
     if (validationErrors.length) {
       console.log('bruh3')
       req.flash('errors', validationErrors)
-      return res.redirect('../')
     }
     req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
   
@@ -88,10 +88,10 @@ const User = require('../models/User')
       if (existingUser) {
         req.flash('errors', { msg: 'Account with that email address or username already exists.' })
         console.log('bruh...')
-        return res.redirect('../')
+        // return res.redirect('../')
       }
       // NOTE TO SELF:
-      // Use AJAX to handle the form. Redirecting/re-rendering/refreshing the page can be avoided that way.
+      // Use AJAX to handle the forms. Redirecting/re-rendering/refreshing the page can be avoided that way.
       user.save()
       .then((err) => {
         if (err) { return next(err) }
