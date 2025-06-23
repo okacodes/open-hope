@@ -15,25 +15,25 @@ registerBtn.addEventListener('click', () => {
 }
 )
 
-signupSubmitBtn.addEventListener('submit')
+// signupSubmitBtn.addEventListener('submit')
 
-// submit form data using AJAX (avoid page refreshing)
-document.querySelector('.signup-form').addEventListener('submit', async (def) => {
-  def.preventDefault(); // Prevent the default form submission
+// // submit form data using AJAX (avoid page refreshing)
+// document.querySelector('.signup-form').addEventListener('submit', async (def) => {
+//   def.preventDefault(); // Prevent the default form submission
 
-  // define form fields for submission
-  userName = document.querySelector('.userName').value.trim()
-  email = document.querySelector('.email').value.trim()
-  password = document.querySelector('.password').value.trim()
-  confirmPassword = document.querySelector('.confirmPassword').value.trim()
+//   // define form fields for submission
+//   userName = document.querySelector('.userName').value.trim()
+//   email = document.querySelector('.email').value.trim()
+//   password = document.querySelector('.password').value.trim()
+//   confirmPassword = document.querySelector('.confirmPassword').value.trim()
 
-  const res = await fetch('/signup', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(userName, email, password, confirmPassword)
-  })
+//   const res = await fetch('/signup', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(userName, email, password, confirmPassword)
+//   })
 
 
-})
+// })

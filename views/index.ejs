@@ -17,41 +17,7 @@
   <title>Open Hope - Home</title>
 </head>
 <body>
-  <div class="signup-modal-container hidden">
-    
-    <div class="signup-form-container">
-      <div class="close-btn-container">
-        <a href="#"><i class="fa-solid fa-x close-btn"></i></a>
-      </div>
-      <div class="register-head">
-        <span>Register</span>
-      </div>
-      <div class="alert-container">
-      <% if (locals.messages.errors) { %>
-        <%= messages.errors[0].msg %>
-      <% } %>
-      </div>
-      <form class="signup-form">
-        <div class="register-field">
-          <label for="userName">Username:</label>
-          <input class="userName" type="text" name="userName" placeholder="Username">
-        </div>
-        <div class="register-field">
-          <label for="email">Email:</label>
-          <input class="email" type="email" name="email" placeholder="Email">
-        </div>
-        <div class="register-field">
-          <label for="password">Password:</label>
-          <input class="password" type="password" name="password" placeholder="Password">
-        </div>
-        <div class="register-field">
-          <label for="confirmPassword">Confirm Password:</label>
-          <input class="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password">
-        </div>
-        <input class="register-btn-modal" type="submit" value="Sign up">
-      </form>
-    </div>
-  </div>
+
   <div class="header-container">
     <header class="header">
       <img class="open-hope-logo" src="images/open-hope-logo.png" alt="Open Hope Logo">

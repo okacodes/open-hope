@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Shoelace CSS stuff - Maybe use -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script> -->
+  
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Open Hope - Home</title>
+</head>
+<body>
+  <div class="header-container">
+    <header class="header">
+      <img class="open-hope-logo" src="images/open-hope-logo.png" alt="Open Hope Logo">
+      <div class="menu-links">
+        <a href="#">Home</a>
+        <a href="#">Lost a Pet?</a>
+        <a href="#">Find a shelter</a>
+      </div>
+      <div class="menu-login">
+        <a class="register-btn" href="#">Sign up</a>
+        <a class="login-btn" href="#">Log in</a>
+      </div>
+    </header>
+  </div>
+  <div class="signup-modal-container">
+    <div class="signup-form-container">
+    <div class="register-head">
+      <span>Register</span>
+    </div>
+    <div class="alert-container">
+    <% if (locals.messages.errors) { %>
+      <%= messages.errors[0].msg %>
+    <% } %>
+    </div>
+      <form class="signup-form" action="/signup" method="POST">
+        <div class="register-field">
+          <label for="userName">Username</label>
+          <input class="userName" type="text" name="userName">
+        </div>
+        <div class="register-field">
+          <label for="email">Email</label>
+          <input class="email" type="email" name="email">
+        </div>
+        <div class="register-field">
+          <label for="password">Password</label>
+          <input class="password" type="password" name="password">
+        </div>
+        <div class="register-field">
+          <label for="confirmPassword">Confirm Password</label>
+          <input class="confirmPassword" type="password" name="confirmPassword">
+        </div>
+        <input class="register-btn-modal" type="submit" value="Sign up">
+      </form>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
