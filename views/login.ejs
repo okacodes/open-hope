@@ -34,23 +34,23 @@
   <div class="signup-modal-container">
     <div class="signup-form-container">
     <div class="register-head">
-      <span>Register</span>
+      <span>Log in</span>
     </div>
     <div class="alert-container">
     <% if (locals.messages.errors) { %>
       <%= messages.errors[0].msg %>
     <% } %>
     </div>
-      <form class="signup-form" action="/signup" method="POST">
+      <form class="signup-form" action="/login" method="POST">
         <div class="register-field">
           <label for="userName">Username/Email</label>
           <input class="userName" type="text" name="userName">
         </div>
         <div class="register-field">
-          <label for="email">Email</label>
-          <input class="email" type="email" name="email">
+          <label for="password">Password</label>
+          <input class="pas" type="password" name="password">
         </div>
-        <input class="register-btn-modal" type="submit" value="Sign up">
+        <input class="register-btn-modal" type="submit" value="Log in">
       </form>
     </div>
   </div>

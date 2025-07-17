@@ -242,12 +242,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid blue;
     width: 98%;
     margin-top: 1%;
     gap: 1%;
   }
-    .hero-secondary {
+    .hero-secondary-left {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -255,24 +254,49 @@ body {
       /* width: 98%; */
       width: 50%;
       height: 500px;
-      border: 2px solid blue;
       background-color: #b8e4e2;
+    }
+    .hero-secondary-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* width: 98%; */
+      width: 50%;
+      height: 500px;
+      background-color: #e5ffd5;
     }
       .hero-secondary-text {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: 19px solid red;
+        gap: 3rem;
       }
         .hero-secondary-text > h2 {
           padding: 0;
-          margin: 3rem;
+          /* margin: 3rem; */
           font-size: 2rem;
         }
         .hero-secondary-text > span {
           margin: 0 3rem;
           text-align: center;
         }
+        .hero-secondary-text > a {
+          background-color: white;
+          text-decoration: none;
+          color: #7ba3a1;
+          border: none;
+          border-radius: 10px;
+          padding: 1.2rem 2rem;
+          /* margin: 0 0 3rem; */
+          transition: 0.3s ease-in-out;
+        }
+          .hero-secondary-text > a:hover {
+            box-shadow: inset 0 0 0 1px #7ba3a1;
+            background-color: rgb(243, 243, 243);
+          }
           .hero-img-left-container {
             display: flex;
             justify-content: flex-end;
@@ -286,15 +310,15 @@ body {
               width: 30%;
               height: auto;
             }
-          .hero-img-right-container {
+          /* .hero-img-right-container {
             display: flex;
             justify-content: flex-end;
 
           }
             .hero-cat-right {
-              width: 50%;
-              height: auto;
-            }
+              width: auto;
+              height: 200px;
+            } */
 
 
 
