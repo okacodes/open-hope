@@ -8,6 +8,7 @@ const session = require('express-session')
 const flash = require('express-flash')
 const MongoStore = require('connect-mongo')
 const mainRoutes = require('./routes/main')
+const dashboardRoutes = require('./routes/dashboard')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -39,6 +40,7 @@ app.use(passport.session())
 app.use(flash())
 
 app.use('/', mainRoutes)
+app.use('/dashboard', dashboardRoutes)
  
 app.listen((process.env.PORT || 8484), ()=>{
   console.log('Server is running, you better catch it!')
