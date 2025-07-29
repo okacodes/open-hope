@@ -5,7 +5,13 @@ const User = require('../models/User')
 module.exports = function (passport) {
   passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
     User.findOne({ email: email.toLowerCase() }).then((user) => {
-      console.log(user)
+      exports.userObj = {
+        _id: user.id,
+        userName: user.userName,
+        email: user.email
+      }
+      console.log(user.userName)
+      console.log('test' + user + 'whoa')
       if (!user) {
         console.log('User not found')
         return done(null, false, { msg: `Email ${email} not found.` })
