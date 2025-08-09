@@ -202,6 +202,11 @@ body {
           background-color: #7ba3a1;
           transition: 0.3s ease-in-out;
         }
+        @media (max-width: 956px) {
+          .menu-links, .menu-login{
+            visibility: hidden;
+          }
+        }
   .hero-container {
     display: flex;
     flex-direction: column;
