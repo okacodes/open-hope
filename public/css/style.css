@@ -154,6 +154,7 @@ body {
   }
     .open-hope-logo {
       width: 225px;
+      padding: 0.5rem 0 0 0.6rem;
     }
     .menu-links {
       display: flex;
@@ -202,9 +203,29 @@ body {
           background-color: #7ba3a1;
           transition: 0.3s ease-in-out;
         }
+      .fa-bars {
+        display: none;
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
+      }
+
         @media (max-width: 956px) {
           .menu-links, .menu-login{
-            visibility: hidden;
+            display: none;
+          }
+
+          .fa-bars {
+            display: flex;
+          }
+
+          .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
           }
         }
   .hero-container {
@@ -218,16 +239,18 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
       width: 98%;
       background-color: rgb(255, 255, 205);
     }
       .hero > h1 {
+        font-size: clamp(1.8rem, 2.5vw, 2.8rem);
         padding: 0;
         margin: 3rem;
       }
       .hero > span {
         padding: 0;
-        margin: 0 0 3rem;
+        margin: 0 3rem 3rem 3rem;
       }
       .hero > a {
         background-color: white;
@@ -251,6 +274,18 @@ body {
     margin-top: 1%;
     gap: 1%;
   }
+
+  @media (max-width: 662px) {
+    .hero-secondary-container {
+      flex-direction: column;
+      width: 98%;
+    }
+
+    .hero-secondary-left, .hero-secondary-right {
+      width: 100% !important;
+    }
+  }
+
     .hero-secondary-left {
       display: flex;
       flex-direction: column;
@@ -282,6 +317,7 @@ body {
         .hero-secondary-text > h2 {
           padding: 0;
           /* margin: 3rem; */
+          text-align: center;
           font-size: 2rem;
         }
         .hero-secondary-text > span {
@@ -297,6 +333,9 @@ body {
           padding: 1.2rem 2rem;
           /* margin: 0 0 3rem; */
           transition: 0.3s ease-in-out;
+        }
+        .hero-image {
+          max-width: 90%;
         }
           .hero-secondary-text > a:hover {
             box-shadow: inset 0 0 0 1px #7ba3a1;
